@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+<body>
+    
+    <script>
+        //promise function in palindrome
+
+                function checks(s){
+   
+   let a=121
+   let b=0
+   while(a!=0){
+       rem=a%10
+       a=(a-rem)/10
+       b=(b*10)+rem
+   }
+   return new Promise ((re,rj)=>
+{
+   if(s===b){
+       re(s)
+   }
+   else{
+       rj(s)
+   }
+   
+})
+}
+checks(121).then((result) => {
+    console.log(`${result}is palindrome`)
+}).catch((err) => {
+    console.log(`${err}is not palindrome`)
+});
+
+                //amstrong function in promise
+
+                function checkss(rr){
+   
+   let aa=rr
+   let ba=aa
+   count=0;
+   while(aa!=0){
+      let rems=aa%10
+    //    let ab=0
+       aa=(aa-rems)/10
+       count++
+   }
+   console.log(count)
+   let bs=0
+   while(ba!=0){
+   let rems=ba%10
+    ba=(ba-rems)/10
+    bs+=(rems**count)
+   }
+  
+   return new Promise ((re,rj)=>
+{
+   if(rr===bs){
+       re(rr)
+   }
+   else{
+       rj(rr)
+   }
+   console.log(bs)
+   console.log(rr)
+})
+}
+    
+checkss(153).then((results) => {
+    console.log(`${results}is amstrong`)
+})
+.catch((errs) => {
+    console.log(`${errs}is not amstrong`)
+});
+    </script>
+</body>
+</html>
